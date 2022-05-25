@@ -13,6 +13,13 @@ const path = require('path')
 require("dotenv").config()
 
 app.use(express.static(path.join(__dirname, '../public')))
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/home.html'));
+})
+
+app.get("styles", (req, res) => {
+    res.SendFile(path.join(__dirname, '../public/index.css'));
+})
 
 const { getChest }= require('./controller')
 

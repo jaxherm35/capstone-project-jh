@@ -1,7 +1,7 @@
 const chestBtn = document.getElementById('Chest');
 
 const getChest = () => {
-    axios.get('http://localhost:5050/api/chest/')
+    axios.get('http://localhost:3000/api/chest/')
     .then(res => {
         const data = res.data;
         alert(data);
