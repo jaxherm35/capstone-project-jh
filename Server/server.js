@@ -12,7 +12,7 @@ const path = require('path')
 
 require("dotenv").config()
 
-app.use(express.static(path.join(__dirname, './public')))
+app.use(express.static(path.join(__dirname, '../public')))
 
 const { getChest }= require('./controller')
 
