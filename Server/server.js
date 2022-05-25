@@ -1,7 +1,10 @@
+require("dotenv").config()
 const express = require('express')
-const cors= require('cors')
-
 const app = express()
+const cors= require('cors')
+const {SERVER_PORT} = process.env
+const {seed, getAll} = require('./seed.js')
+
 
 app.use(cors())
 
@@ -9,8 +12,12 @@ app.use(express.json())
 
 const path = require('path')
 
+app.post('/seed', seed)
+app.get('/all_table', getAll)
 
-require("dotenv").config()
+
+
+
 
 app.use(express.static(path.join(__dirname, '../public')))
 app.get("/", (req, res) => {
@@ -21,7 +28,6 @@ app.get("styles", (req, res) => {
     res.SendFile(path.join(__dirname, '../public/index.css'));
 })
 
-const { getChest }= require('./controller')
 
 
 
@@ -29,8 +35,10 @@ const { getChest }= require('./controller')
 
 
 
-const port = process.env.PORT || 3000
 
-app.listen(port, () => {
+
+const port = process.env.PORT || 5432
+
+app.listen(SERVER_PORT, () => {
     console.log(`listening on ${port}`)
 })

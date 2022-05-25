@@ -1,11 +1,17 @@
-const chestBtn = document.getElementById('Chest');
+// const chestBtn = document.getElementById('Chest');
 
-const getChest = () => {
-    axios.get('http://localhost:3000/api/chest/')
-    .then(res => {
-        const data = res.data;
-        alert(data);
+const { default: axios } = require("axios");
 
-    })
-};
-chestBtn.addEventListener('click', getChest);
+// const getChest = () => {
+//     axios.get('http://localhost:3000/api/chest/')
+//     .then(res => {
+//         const data = res.data;
+//         alert(data);
+
+//     })
+// };
+// chestBtn.addEventListener('click', getChest);
+
+function getAll() {
+    axios.get('http://localhost:5432/all_table/')
+}
