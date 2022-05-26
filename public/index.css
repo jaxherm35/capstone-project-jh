@@ -42,6 +42,7 @@ h2 {
 }
 
 div {
+    margin: auto;
     display: inline-flexbox;
     align-content: space-evenly;
     box-sizing: content-box;

@@ -3,7 +3,9 @@ const express = require('express')
 const app = express()
 const cors= require('cors')
 const {SERVER_PORT} = process.env
-const {seed, getAll} = require('./seed.js')
+const {seed} = require('./seed.js')
+const { getChest, getArms } = require('./controller')
+
 
 
 app.use(cors())
@@ -13,7 +15,9 @@ app.use(express.json())
 const path = require('path')
 
 app.post('/seed', seed)
-app.get('/all_table', getAll)
+// app.get('/all_table', getAll)
+app.get('/all_table', getChest)
+app.get('/all_table', getArms)
 
 
 
@@ -27,14 +31,6 @@ app.get("/", (req, res) => {
 app.get("styles", (req, res) => {
     res.SendFile(path.join(__dirname, '../public/index.css'));
 })
-
-
-
-
-
-
-
-
 
 
 const port = process.env.PORT || 5432
