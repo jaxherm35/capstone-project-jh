@@ -4,7 +4,7 @@ const app = express()
 const cors= require('cors')
 const {SERVER_PORT} = process.env
 const {seed} = require('./seed.js')
-const { getChest, getArms, getBack, getLegs, getCore } = require('./controller')
+const { getChest, getArms, getBack, getLegs, getCore, addGoal,  getGoals } = require('./controller')
 
 
 
@@ -21,6 +21,10 @@ app.get('/all_table/chest', getChest)
 app.get('/all_table/back', getBack)
 app.get('/all_table/legs', getLegs)
 app.get('/all_table/core', getCore)
+
+app.post('/goals', addGoal)
+// app.delete('/goals', deleteGoal)
+app.get('/goals', getGoals)
 
 
 

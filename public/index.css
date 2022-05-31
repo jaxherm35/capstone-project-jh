@@ -1,49 +1,44 @@
 body {
     background-image: url('https://img.freepik.com/free-vector/abstract-blue-geometric-shapes-background_1035-17545.jpg?w=2000')
+    
 
 }
 
 h1 {
-    display: inline-flexbox;
-    text-align: center
-}
-
-
-
-h2 {
-    display:flexbox;
-    font-size: xx-large;
-    font-style: bold;
-
-}
-
-.getLifts {
     display: flex;
-    padding: 15px, 15px;
-    color: black ;
-    background-color: ghostwhite ;
-    outline: black;
-    outline-style: double;
-    font-size: medium;
-    font-weight: bold;
+    justify-content: center;
+}
+
+
+.goals {
+    display: flex;
+    justify-content: center;
+
+}
+
+.lifts {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+.getLifts{
+    padding: 5px;
+    border: 5px solid rgb(33, 46, 226);
+    background-color: ghostwhite;
+    font-size: large;
+    font-weight: bold
     
 }
+/* .randomLift{
+    padding: 5px;
+    border: 5px solid rgb(33, 46, 226);
+    background-color: aquamarine;
+} */
 
-.randomLift {
+.textInput {
     display: flex;
-    margin-top: 30px;
-    padding: 15px, 15px;
-    color: black ;
-    background-color: ghostwhite ;
-    outline: black;
-    outline-style: double;
-    font-size: medium;
-    font-weight: bold;
+    flex-direction: column;
+    justify-content: center;
 }
 
-div {
-    margin: auto;
-    display: inline-flexbox;
-    align-content: space-evenly;
-    box-sizing: content-box;
-}

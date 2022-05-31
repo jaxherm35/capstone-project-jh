@@ -7,49 +7,57 @@
     <title>Home</title>
     <link rel="stylesheet" href="index.css">
 </head>
-<body>
+
+<header>    
     <h1>Let's get to work!</h1>
-    <p>Click "Get Lifts" for a list of lifts, or "Random Workout" for one random lift specific to that category</p>
+    <p>Click "Get Lifts" for a list of lifts</p>
+    <p>You can also add a goal for your workout by typing one into the box and clicking "Add Goal"</p>
+ </header>
 
-<hr/>
+ <body>
+<div id="goals" class="goals">
+    <form>
+        <input id = "addGoalInput" placeholder = "Add a new goal"/>
+        <button id="addGoalBtn">Add Goal</button>
+        <!-- <input id = "deleteGoalInput" placeholder = "Which goal to delete?"/>
+        <button id = "deleteGoalBtn">Delete a Goal</button> -->
+        <button id = "getGoalsBtn">See your Goals!</button>
+    </form>
+</div>
 
-<div>
+<div id="lifts" class="lifts">
     <h2>Chest</h2>
+    <div id="chestLifts" class="chestLifts"></div>
     <button class = "getLifts" id="Chest">Get Lifts</button>
-    <button class = "randomLift">Random Workout</button>
-</div>
-<hr/>
+    <!-- <button class = "randomLift">Random Workout</button> -->
+    
+<br/>
 
-<div> 
     <h2>Arms</h2>
+    <div id="armLifts" class="armLifts"></div>
     <button class = "getLifts" id="Arms">Get Lifts</button>
-    <button class = "randomLift">Random Workout</button>
-</div>
-<hr/>
+    <!-- <button class = "randomLift">Random Workout</button> -->
+<br/>
 
-<div>
     <h2>Back</h2>
+    <div id="backLifts" class="backLifts"></div>
     <button class = "getLifts" id="Back">Get Lifts</button>
-    <button class = "randomLift">Random Workout</button>
-</div>
-<hr/>
+    <!-- <button class = "randomLift">Random Workout</button> -->
+<br/>
 
-<div>
     <h2>Legs</h2>
+    <div id="legLifts" class="legLifts"></div>
     <button class = "getLifts" id="Legs">Get Lifts</button>
-    <button class = "randomLift">Random Workout</button>
-</div>
-<hr/>
+    <!-- <button class = "randomLift">Random Workout</button> -->
+<br/>
 
-<div>
     <h2>Core</h2>
+    <div id="coreLifts" class="coreLifts"></div>
     <button class = "getLifts" id="Core">Get Lifts</button>
-    <button class = "randomLift">Random Workout</button>
+    <!-- <button class = "randomLift">Random Workout</button> -->
+<br/>
 </div>
-<hr/>
-
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
-
 </body>
 </html>

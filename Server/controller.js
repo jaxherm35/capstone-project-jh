@@ -1,4 +1,5 @@
 require("dotenv").config();
+const { default: axios } = require("axios");
 // const req = require("express/lib/request");
 const Sequelize = require("sequelize");
 
@@ -14,11 +15,14 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
     }
 })
 
+const goals = []
+
+
 module.exports = {
     getChest: (req, res) => {
         sequelize.query(`SELECT lift_name, type FROM all_table WHERE type ='Chest'`)
             .then((dbRes) => {
-                res.status(200).send(dbRes)
+                res.status(200).send(dbRes[0])
             })
             .catch((err) => {
                 console.log(err)
@@ -27,8 +31,8 @@ module.exports = {
 
     getArms: (req, res) => {
         sequelize.query(`SELECT lift_name, type FROM all_table WHERE type = 'Arms'`)
-            .then((dbRes) => {   //try from ${req.query}
-                res.status(200).send(dbRes)
+            .then((dbRes) => {
+                res.status(200).send(dbRes[0])
             })
             .catch((err) => {
                 console.log(err)
@@ -38,7 +42,7 @@ module.exports = {
     getBack: (req, res) => {
         sequelize.query(`SELECT lift_name, type FROM all_table WHERE type ='Back'`)
             .then((dbRes) => {
-                res.status(200).send(dbRes)
+                res.status(200).send(dbRes[0])
             })
             .catch((err) => {
                 console.log(err)
@@ -48,7 +52,7 @@ module.exports = {
     getLegs: (req, res) => {
         sequelize.query(`SELECT lift_name, type FROM all_table WHERE type ='Legs'`)
             .then((dbRes) => {
-                res.status(200).send(dbRes)
+                res.status(200).send(dbRes[0])
             })
             .catch((err) => {
                 console.log(err)
@@ -58,12 +62,35 @@ module.exports = {
     getCore: (req, res) => {
         sequelize.query(`SELECT lift_name, type FROM all_table WHERE type ='Core'`)
             .then((dbRes) => {
-                res.status(200).send(dbRes)
+                res.status(200).send(dbRes[0])
             })
             .catch((err) => {
                 console.log(err)
             })
+    },
+
+    addGoal: (req, res) => {
+        const {newGoal} = req.body
+
+        goals.push(newGoal)
+        res.status(200).send('New Goal Added')
+    },
+
+    // deleteGoal: (req, res) => {
+    //     const {id} = req.params
+
+    //     if(goals[+id]) {
+    //         goals.splice(id, 1)
+    //     } else {
+    //         res.status(200).send('Goal deleted successfully')
+    //     }
+    //         res.status(404).send('No goals found')
+    // },
+
+    getGoals: (req, res) => {
+        res.status(200).send(goals)
     }
+
 }
 
 
