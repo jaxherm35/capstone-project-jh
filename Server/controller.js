@@ -1,6 +1,5 @@
 require("dotenv").config();
 const { default: axios } = require("axios");
-// const req = require("express/lib/request");
 const Sequelize = require("sequelize");
 
 
@@ -76,30 +75,8 @@ module.exports = {
         res.status(200).send('New Goal Added')
     },
 
-    // deleteGoal: (req, res) => {
-    //     const {id} = req.params
-
-    //     if(goals[+id]) {
-    //         goals.splice(id, 1)
-    //     } else {
-    //         res.status(200).send('Goal deleted successfully')
-    //     }
-    //         res.status(404).send('No goals found')
-    // },
-
     getGoals: (req, res) => {
         res.status(200).send(goals)
     }
 
 }
-
-
-    // getAll: (req, res) => {
-    //     sequelize.query(`SELECT * FROM all_table`)
-    //     .then((dbRes) => {
-    //         res.status(200).send(dbRes[0])
-    //     })
-    //     .catch((err) => {
-    //         console.log(err)
-    //     })
-    // },

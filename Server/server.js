@@ -15,7 +15,6 @@ app.use(express.json())
 const path = require('path')
 
 app.post('/seed', seed)
-// app.get('/all_table', getAll)
 app.get('/all_table/arms', getArms)
 app.get('/all_table/chest', getChest)
 app.get('/all_table/back', getBack)
@@ -23,7 +22,6 @@ app.get('/all_table/legs', getLegs)
 app.get('/all_table/core', getCore)
 
 app.post('/goals', addGoal)
-// app.delete('/goals', deleteGoal)
 app.get('/goals', getGoals)
 
 

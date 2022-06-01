@@ -69,8 +69,6 @@ function getCore() {
 document.getElementById("Core").addEventListener('click', getCore)
 
 
-
-
 const addGoalBtn = document.getElementById('addGoalBtn')
 const addGoalInput = document.getElementById('addGoalInput')
 
@@ -87,17 +85,6 @@ addGoalBtn.addEventListener('click', addGoal)
 
 const deleteGoalBtn = document.getElementById('deleteGoalBtn')
 const deleteGoalInput = document.getElementById('deleteGoalInput')
-
-// const deleteGoal = () => {
-//     axios.delete(`http://localhost:5432/goals/${deleteInput.value}`)
-//     .then(res => {
-//         alert(res.data)
-//         deleteInput.value = ''
-//     })
-// }
-
-// deleteGoalBtn.addEventListener('click', deleteGoal)
-
 
 const getGoals= () => {
     axios.get('http://localhost:5432/goals')
